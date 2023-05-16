@@ -1,0 +1,17 @@
+    <title>List of students</title>
+</head>
+<body>
+{% block content %}
+
+<h1>List of students:</h1>
+
+<ul>
+ {% for student in students %}
+  <li>{{ student.first_name }} {{ student.last_name }}</li>
+ {% endfor %}
+</ul>
+
+{% endblock %}
+
+</body>
+</html>

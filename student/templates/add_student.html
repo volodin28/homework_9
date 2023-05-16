@@ -1,0 +1,6 @@
+<h1>Add new student:</h1>
+<form action="{% url 'add-student' %}" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
