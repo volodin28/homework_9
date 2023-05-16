@@ -5,7 +5,7 @@
 The first thing to do is to clone the repository:
 
 ```sh
-$ git clone https://github.com/volodin28/homework_9.git
+$ git clone https://github.com/volodin28/homework_9
 $ cd homework_9
 ```
 
