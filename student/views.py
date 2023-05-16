@@ -42,7 +42,6 @@ def add_student(request):
         if form.is_valid():
             form.save()
             send_sms.delay(form.cleaned_data['phone'])
-            # send_sms.delay()
             return HttpResponseRedirect(reverse("student-list"))
     else:
         form = StudentForm()
