@@ -1,8 +1,8 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
-from student.tasks import send_sms
 
+from student.tasks import send_sms
 from .forms import StudentForm
 from .models import Student
 
@@ -41,7 +41,7 @@ def add_student(request):
         form = StudentForm(request.POST)
         if form.is_valid():
             form.save()
-            send_sms.delay(form.cleaned_data['phone'])
+            send_sms.delay(form.cleaned_data['first_name'], form.cleaned_data['phone'])
             return HttpResponseRedirect(reverse("student-list"))
     else:
         form = StudentForm()
